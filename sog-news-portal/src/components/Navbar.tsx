@@ -15,8 +15,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Switch } from "@/components/ui/switch";
 import MobileMenu from "@/components/MobileMenu";
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+
+    const pathname = usePathname()
+
     return (
         <header className="py-4 bg-white text-gray-900 shadow-md transition-colors duration-300">
             <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
@@ -29,13 +33,13 @@ const Navbar = () => {
                 <NavigationMenu className="hidden lg:flex">
                     <NavigationMenuList className="flex space-x-8">
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/blog" className="hover: text-gray-600">Blog</NavigationMenuLink>
+                            <NavigationMenuLink href="/blog" className={`${pathname === '/blog' ? 'text-red-500 font-semibold' : ''} hover: text-gray-600`}>Blog</NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/about-us" className="hover: text-gray-600">Tentang Kami</NavigationMenuLink>
+                            <NavigationMenuLink href="/tentang-kami" className={`${pathname === '/tentang-kami' ? 'text-red-500 font-semibold' : ''} hover: text-gray-600`}>Tentang Kami</NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/contact-us" className="hover: text-gray-600">Hubungi Kami</NavigationMenuLink>
+                            <NavigationMenuLink href="/hubungi-kami" className={`${pathname === '/hubungi-kami' ? 'text-red-500 font-semibold' : ''} hover: text-gray-600`}>Hubungi Kami</NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
