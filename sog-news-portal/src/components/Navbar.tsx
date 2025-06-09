@@ -1,6 +1,6 @@
 "use client" //for buttonOnclick
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,13 +16,16 @@ import {
 import { Switch } from "@/components/ui/switch";
 import MobileMenu from "@/components/MobileMenu";
 import { usePathname } from 'next/navigation';
+import { ThemeContext } from '@/context/themeContext';
 
 const Navbar = () => {
 
     const pathname = usePathname()
 
+    const {isDarkMode, toggleTheme}: any = useContext(ThemeContext)
+
     return (
-        <header className="py-4 bg-white text-gray-900 shadow-md transition-colors duration-300">
+        <header className={`py-4 ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"} bg-white text-gray-900 shadow-md transition-colors duration-300`}>
             <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
                 {/* Logo */}
                 <div className="text-xl font-bold">
@@ -46,7 +49,9 @@ const Navbar = () => {
                     
                 {/* Color inverter and login button */}
                 <div className="hidden lg:flex items-center space-x-4">
-                    <div className="flex items-center">
+                    <div
+                    onClick={toggleTheme}
+                    className="flex items-center">
                         <span className="mr-2">Mode Malam</span>
                         <Switch />
                     </div>

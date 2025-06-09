@@ -1,10 +1,10 @@
-const API_KEY = 'ccfa6bfdd29840389fb857ed1fce5bf2';
+const API_KEY = '58b68271bcebbe4979c2a48a85127f22';
 
 const fetchNews = async (category: string = "", search: string = "") => {
     if (!search) return [];
     
     try {
-        const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=ccfa6bfdd29840389fb857ed1fce5bf2`);
+        const response = await fetch(`https://gnews.io/api/v4/search?q=${search}&lang=en&country=us&max=10&apikey=58b68271bcebbe4979c2a48a85127f22`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }

@@ -120,3 +120,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.dark {
+  @apply bg-gray-900 text-white;
+}
