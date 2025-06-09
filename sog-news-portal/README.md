@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Project Description
+
+`sog-news-portal` is a news application built with Next.js. It aims to provide users with a seamless experience for browsing and reading news articles from various sources.
+
+### Key Features:
+
+*   **News Aggregation:** Fetches and displays news articles from external APIs, primarily using [newsapi.org](https://newsapi.org) and [gnews.io](https://gnews.io).
+*   **Latest News:** Shows the most recent news articles on the homepage, keeping users up-to-date with current events.
+*   **Banner:** Includes a prominent banner section, possibly for featured articles or important announcements.
+*   **Newsletter Component:** Offers a newsletter subscription component, allowing users to sign up for updates.
+
 ## Getting Started
 
 First, run the development server:
